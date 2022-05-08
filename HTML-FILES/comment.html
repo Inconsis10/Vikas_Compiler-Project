@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Comment or Not</title>
+  <link rel="stylesheet" href="/CSS/style.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav id="slide-menu">
+    <ul>
+        <a style="text-decoration: none;" href="/HTML-FILES/comment.html">
+            <li class="timeline">Check Comment</li>
+          </a>
+          <a href="/HTML-FILES/lexical.html" style="text-decoration: none;">
+            <li class="events">Lexical analyzer</li>
+          </a>
+          <a style="text-decoration: none;" href="/HTML-FILES/identifier.html">
+            <li class="calendar">Identifier Validation</li>
+          </a>
+          <a href="/HTML-FILES/leftrightderivation.html" style="text-decoration: none;">
+            <li class="sep settings">Left Right Derivation</li>
+          </a>
+          <a href="/HTML-FILES/parsetree.html" style="text-decoration: none;">
+            <li class="sep settings">ParseTree Generator</li>
+          </a>
+          <a style="text-decoration: none;" href="/HTML-FILES/index.html">
+            <li class="logout">About</li>
+          </a>
+    </ul>
+  </nav>
+
+  <!-- content panel -->
+  <div id="content">
+    <div class="menu-trigger"></div>
+    <div class="container">
+      <h1 class="mt-5" id="abhi1">Aim:- </h1>
+      <p class="lead">To design an online simulator that checks whether a given input string (program snippet) is a
+        single/multi-comment or not a comment</code>.</p>
+
+    </div>
+
+    <div class="container">
+      <h1 class="mt-5" id="abhi2">Theory:- </h1>
+      <p class="lead">Given a string, representing a program snippet, the task is to check if the given string is a
+        single/multi-line comment or not a comment</code>.</p>
+      <p class="lead">Types of Comment: </p>
+      <ul class="lead">
+        <li>
+          <p class="lead">Single Line Comment: </p>
+          <p class="lead">Comments preceded by a Double Slash (‘//’)</p>
+        </li>
+        <li>
+          <p class="lead">Multi-line Comment: </p>
+          <p class="lead">Comments starting with (‘/*’) and ending with (‘*/’).</p>
+        </li>
+      </ul>
+      <p class="lead">Check if at the first Index(i.e. index 0) the value is ‘/’ then follow below steps else print “It
+        is not a comment”.</p>
+      <ul class="lead">
+        <li>
+          <p class="lead">If line[0] == ‘/’: </p>
+          <p class="lead">o If line[1] == ‘/’, then print “It is a single line comment”.</p>
+          <p class="lead"> o If line[1] == ‘*’, then traverse the string and if any adjacent pair of ‘*’ & ‘/’ is found
+            then print “It is a multi-line comment”.
+          </p>
+        </li>
+        <li>
+          <p class="lead">Otherwise, print “It is not a comment”.</p>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="container">
+      <h1 class="mt-5" id="abhi3">Input/Output Examples:- </h1>
+      <ul class="lead">
+        <li>
+          <p class="lead">Input: line = “/* Comment */” </p>
+          <p class="lead">Output: It is a multi-line comment</p>
+        </li>
+        <li>
+          <p class="lead">Input: line = “// Comment ” </p>
+          <p class="lead">Output: It is a single-line comment</p>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="container">
+      <h1 class="mt-5" id="abhi4">Online Simulator:- </h1>
+
+      <p class="lead">Click on this <a href="https://comment-or-notiem.netlify.app/"><b style="font-size: x-large;">Link</b></a> to go to the Online
+        Simulator.</p>
+    </div>
+
+    <div class="container">
+      <h1 class="mt-5" id="abhi5">Discussion:- </h1>
+      <p class="lead">We wrote the online simulator using C programming language and integrated it with the website
+        designed using HTML, CSS, JavaScript. The simulator takes a string as input and checks whether it is a
+        single/multi-line comment or not a comment</code>.</p>
+    </div>
+
+    <div class="container">
+      <h1 class="mt-5" id="abhi6">Source of Error & Error Recovery:- </h1>
+      <p class="lead">There can be two possible sources of error for this string in the program snippet:</code></p>
+      <ul class="lead">
+        <li>
+          <p class="lead">Unterminated Multi-Line Comments: </p>
+          <p class="lead">It occurs when we do not terminate the comment with a valid set of characters (here the
+            red-coloured */). Single line comment does not need to terminate, and it starts by a double slash (//), but,
+            multi-line comment needs to be terminated by */ (asterisk and slash). If a multi-line comment is not
+            terminated properly, then during lexical analysis phase of the compiler, the compiler will consider
+            everything after start of the multi-line comment as a comment and ignore them during tokenization
+            (traversing the program from left to right line-by-line and breaking them down into tokens or logical units
+            of a program).</p>
+        </li>
+        <li>
+          <p class="lead">Nested Multi-Line Comments:</p>
+          <p class="lead">In C, multi-line comments, /* and */, do not nest ie, if we want to write a nested comment
+            (comment within comment), the compiler during lexical analysis phase will consider the first /* as start of
+            multi-line comment and ignore the second /* syntax as it has still not got an end for the first comment
+            “*/”. So, the multi-line comment will end after the first */ (red coloured). After that, the rest of the
+            comment will not be ignored and will be considered during tokenization until it again gets a start of
+            comment line again.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+<script src="/jsFiles/script.js"></script>
+
+</html>
